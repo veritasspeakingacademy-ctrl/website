@@ -1,5 +1,3 @@
-'use client'
-
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -150,11 +148,11 @@ export default function Contact() {
                       <h3 className="font-semibold mb-1">Email Us</h3>
                       <a 
                         href="mailto:contact@veritasspeaking.com"
-                        className="text-lg text-primary hover:underline"
+                        className="text-xl text-primary hover:underline font-medium"
                       >
                         contact@veritasspeaking.com
                       </a>
-                      <p className="text-sm text-muted-foreground mt-1">
+                      <p className="text-sm text-muted-foreground mt-2">
                         We typically respond within 24 hours
                       </p>
                     </div>
