@@ -1,158 +1,202 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import Link from 'next/link'
+import Image from 'next/image'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent } from '@/components/ui/card'
+import { Mic, Users, Target, Award } from 'lucide-react'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Veritas Speaking - Youth Public Speaking Coaching in Toronto | Build Confidence & Communication Skills',
+  description: 'Toronto\'s premier youth public speaking coaching. Empowering teens and young adults to speak with confidence through expert coaching, group sessions, and personalized training. Book your first session today!',
+  keywords: 'youth public speaking Toronto, teen confidence coaching, public speaking classes Toronto, youth communication skills, teen leadership programs, student speech training, public speaking mentorship, confidence workshops Toronto',
+  openGraph: {
+    title: 'Veritas Speaking - Youth Public Speaking Coaching in Toronto',
+    description: 'Empowering teens and young adults to speak with confidence. Expert coaching for public speaking, presentations, and communication skills.',
+    type: 'website',
+    locale: 'en_CA',
+    siteName: 'Veritas Speaking',
+  },
+}
 
 export default function Home() {
   return (
-    <div className="flex-1 flex flex-col">
+    <main>
       {/* Hero Section */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-20 left-20 w-64 h-64 bg-secondary/30 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-20 w-80 h-80 bg-tertiary/30 rounded-full blur-3xl"></div>
-          <div className="absolute top-40 right-40 w-40 h-40 bg-primary/30 rounded-full blur-3xl"></div>
+      <section className="relative py-20 md:py-32 overflow-hidden">
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-20 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
         </div>
-
-        <div className="relative z-10 flex flex-col items-center justify-center min-h-[70vh] text-center px-4">
-          <div className="w-32 h-32 relative mb-6 blob-shape overflow-hidden bg-white p-2">
-            <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-B6cGDEkp45slUV6qTQrIhQjLVJJ9UA.webp"
-              alt="STEMHiss Logo"
-              fill
-              className="object-contain"
-            />
-          </div>
-
-          <h1 className="text-5xl md:text-7xl font-bold font-serif italic mb-6 bg-clip-text text-transparent bg-gradient-to-r from-secondary via-tertiary to-primary">
-            STEMHiss
-          </h1>
-
-          <p className="text-xl md:text-2xl mb-8 max-w-2xl">
-            A student-led organization dedicated to communicating STEM history
-          </p>
-
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Link href="/get-involved">
-              <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-white rounded-full px-8">
-                Get Involved
-              </Button>
-            </Link>
-            <Link href="/blog">
-              <Button
-                size="lg"
-                variant="outline"
-                className="rounded-full px-8 border-tertiary text-tertiary hover:bg-tertiary/10"
-              >
-                Explore Our Blog
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      {/* Mission Statement */}
-      <section className="py-16 relative overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-0 left-1/4 w-64 h-64 bg-quaternary/10 blob-shape-alt"></div>
-          <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-primary/10 blob-shape"></div>
-        </div>
-
-        <div className="relative z-10 max-w-4xl mx-auto px-6">
-          <div className="bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-lg">
-            <p className="text-2xl md:text-3xl font-serif italic leading-relaxed text-center">
-              One in two students find STEM too difficult or boring to study despite 7 in 10 students desiring a career
-              in STEM. We are here to change that.
+        
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <h1 className="font-serif font-bold text-4xl md:text-6xl lg:text-7xl text-balance leading-tight">
+              Find Your Voice. <br />
+              Speak With Confidence. <br />
+              <span className="text-primary">Change Your World.</span>
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed">
+              Veritas Speaking empowers youth and young adults to communicate with clarity, confidence, and purpose.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" asChild>
+                <Link href="/services">Book a Session</Link>
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <Link href="/about">Learn More</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Latest Blog Posts */}
-      <section className="py-16 bg-gradient-to-b from-background to-white">
+      {/* Why Choose Us */}
+      <section className="py-16 bg-muted">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-12 text-center font-serif italic bg-clip-text text-transparent bg-gradient-to-r from-secondary to-tertiary">
-            Latest from Our Blog
-          </h2>
+          <div className="max-w-6xl mx-auto">
+            <h2 className="font-serif font-bold text-3xl md:text-4xl text-center mb-12 text-balance">
+              Why Choose Veritas Speaking?
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Card>
+                <CardContent className="pt-6 space-y-3">
+                  <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Mic className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="font-semibold text-lg">Expert Coaching</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Personalized guidance from experienced public speaking coaches who understand youth development.
+                  </p>
+                </CardContent>
+              </Card>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {/* Gregor Mendel Post */}
-            <div className="blog-card">
-              <div className="blog-card-image">
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-03-07%20180331-91tJuG1P1DxMVPllLJJeYQt5abJuHJ.png"
-                  alt="Gregor Mendel"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm">
-                  Genetics
-                </div>
-              </div>
-              <div className="blog-card-content">
-                <div className="text-sm text-muted-foreground mb-2">March 15, 2025</div>
-                <h3 className="text-xl font-bold mb-2">He Who Made Genetics</h3>
-                <p className="text-muted-foreground mb-4">
-                  Explore the life and work of Gregor Mendel, the father of modern genetics.
-                </p>
-                <Link href="/blog/gregor-mendel">
-                  <Button className="rounded-full bg-primary hover:bg-primary/90">Read More</Button>
-                </Link>
-              </div>
+              <Card>
+                <CardContent className="pt-6 space-y-3">
+                  <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Users className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="font-semibold text-lg">Supportive Community</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Connect with peers, share experiences, and grow together in a safe, encouraging environment.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="pt-6 space-y-3">
+                  <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Target className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="font-semibold text-lg">Proven Methods</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Evidence-based techniques that build confidence and develop practical speaking skills.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="pt-6 space-y-3">
+                  <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Award className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="font-semibold text-lg">Real Results</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Our students consistently report increased confidence and improved communication abilities.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Preview */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12 space-y-4">
+              <h2 className="font-serif font-bold text-3xl md:text-4xl text-balance">
+                Our Services
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
+                Flexible coaching options designed to meet you where you are in your speaking journey.
+              </p>
             </div>
 
-            {/* Coming Soon Posts */}
-            {[1, 2].map((_, index) => (
-              <div key={index} className="coming-soon-card">
-                <div className="coming-soon-blob -top-10 -left-10 w-40 h-40 bg-primary"></div>
-                <div className="coming-soon-blob bottom-10 right-10 w-32 h-32 bg-secondary"></div>
-                <div className="relative z-10">
-                  <h3 className="text-2xl font-bold mb-4">Coming Soon</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <Card className="border-2 hover:border-primary transition-colors">
+                <CardContent className="pt-6 space-y-4">
+                  <h3 className="font-serif font-bold text-xl">Weekly Group Sessions</h3>
                   <p className="text-muted-foreground">
-                    New STEM history articles are on the way! Stay tuned for more fascinating stories.
+                    Join our 30-minute group calls every week to practice and grow with peers.
                   </p>
-                </div>
-              </div>
-            ))}
-          </div>
+                  <p className="text-2xl font-bold">$75<span className="text-base font-normal text-muted-foreground">/month</span></p>
+                  <Button className="w-full" asChild>
+                    <Link href="/services#group-session">Learn More</Link>
+                  </Button>
+                </CardContent>
+              </Card>
 
-          <div className="mt-12 text-center">
-            <Link href="/blog">
-              <Button
-                variant="outline"
-                className="rounded-full px-8 border-secondary text-secondary hover:bg-secondary/10"
-              >
-                View All Blog Posts
+              <Card className="border-2 border-primary">
+                <CardContent className="pt-6 space-y-4">
+                  <div className="inline-block bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded">
+                    MOST POPULAR
+                  </div>
+                  <h3 className="font-serif font-bold text-xl">Individual Coaching</h3>
+                  <p className="text-muted-foreground">
+                    Bi-weekly 60-minute one-on-one sessions personalized to your goals.
+                  </p>
+                  <p className="text-2xl font-bold">$75<span className="text-base font-normal text-muted-foreground">/hour</span></p>
+                  <Button className="w-full" asChild>
+                    <Link href="/services#individual-coaching">Learn More</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 hover:border-primary transition-colors">
+                <CardContent className="pt-6 space-y-4">
+                  <h3 className="font-serif font-bold text-xl">Audio Recordings</h3>
+                  <p className="text-muted-foreground">
+                    12 pre-recorded 3-minute lessons covering essential speaking fundamentals.
+                  </p>
+                  <p className="text-2xl font-bold">$25</p>
+                  <Button className="w-full" asChild>
+                    <Link href="/services#audio-recordings">Learn More</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="text-center mt-8">
+              <Button size="lg" variant="outline" asChild>
+                <Link href="/services">View All Services</Link>
               </Button>
-            </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Information Links */}
-      <section className="py-16 relative overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-20 right-20 w-64 h-64 bg-quaternary/20 rounded-full blur-xl"></div>
-          <div className="absolute bottom-20 left-20 w-72 h-72 bg-tertiary/20 rounded-full blur-xl"></div>
-        </div>
-
-        <div className="relative z-10 container mx-auto px-4">
-          <div className="max-w-3xl mx-auto space-y-6">
-            <Link href="#what-is-stem">
-              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-3xl shadow-lg hover:shadow-xl transition-all hover:scale-105 border-l-8 border-secondary">
-                <h3 className="text-xl font-medium">What is STEM and why is it important?</h3>
-                <p className="text-muted-foreground mt-2">Video by Earth Science Women+ Australia</p>
-              </div>
-            </Link>
-
-            <Link href="#stem-history">
-              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-3xl shadow-lg hover:shadow-xl transition-all hover:scale-105 border-l-8 border-tertiary">
-                <h3 className="text-xl font-medium">A very brief overview of the history of STEM</h3>
-                <p className="text-muted-foreground mt-2">Video by STEMEducation.org</p>
-              </div>
-            </Link>
+      {/* CTA Section */}
+      <section className="py-16 bg-primary text-primary-foreground">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center space-y-6">
+            <h2 className="font-serif font-bold text-3xl md:text-4xl text-balance">
+              Ready to Transform Your Speaking Skills?
+            </h2>
+            <p className="text-lg opacity-90 text-pretty">
+              Join hundreds of young speakers who have discovered their voice and built lasting confidence.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" variant="secondary" asChild>
+                <Link href="/services">Book Your First Session</Link>
+              </Button>
+              <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" asChild>
+                <Link href="/contact">Contact Us</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
-    </div>
+    </main>
   )
 }

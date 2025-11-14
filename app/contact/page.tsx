@@ -1,194 +1,214 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Mail, Phone, MapPin, ExternalLink } from "lucide-react"
+'use client'
 
-export default function Contacts() {
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
+import { Label } from '@/components/ui/label'
+import { Mail, MapPin, Clock } from 'lucide-react'
+import { useState } from 'react'
+import { useToast } from '@/hooks/use-toast'
+import Image from 'next/image'
+
+// See app/contact/metadata.ts
+
+export default function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const { toast } = useToast()
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+
+    // Simulate form submission
+    await new Promise(resolve => setTimeout(resolve, 1000))
+
+    toast({
+      title: 'Message Sent!',
+      description: 'We\'ll get back to you within 24 hours.',
+    })
+
+    setIsSubmitting(false)
+    ;(e.target as HTMLFormElement).reset()
+  }
+
   return (
-    <div className="flex-1 flex flex-col">
-      {/* Header */}
-      <div className="lab-bg w-full">
-        <div className="bg-black/30 py-12">
-          <h1 className="page-heading text-white">Contact Us</h1>
+    <main>
+      {/* Hero */}
+      <section className="py-16 md:py-24 relative">
+        <div className="absolute bottom-10 left-10 opacity-10">
+          <Image src="/veritas-logo.png" alt="" width={80} height={80} />
         </div>
-      </div>
-
-      <div className="accent-bar"></div>
-
-      {/* Content */}
-      <section className="py-16 bg-background">
-        <div className="content-container">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {/* Board Members */}
-            <Card className="md:col-span-2 lg:col-span-2">
-              <CardContent className="p-6">
-                <h2 className="text-2xl font-bold mb-6">Board Members</h2>
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <div className="p-4 rounded-md bg-accent/10">
-                    <div className="font-medium">Velan Mangai Sivakumar</div>
-                    <div className="text-sm text-muted-foreground">Founder and President</div>
-                    <div className="mt-2 flex items-center gap-2 text-sm">
-                      <Mail className="h-4 w-4" />
-                      <span>Add Email or Link</span>
-                    </div>
-                  </div>
-
-                  <div className="p-4 rounded-md bg-accent/10">
-                    <div className="font-medium">Adil Mukhi</div>
-                    <div className="text-sm text-muted-foreground">Vice President</div>
-                    <div className="mt-2 flex items-center gap-2 text-sm">
-                      <Mail className="h-4 w-4" />
-                      <a
-                        href="https://linktr.ee/adilm.0"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="font-medium underline underline-offset-4"
-                      >
-                        LinkTree
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="p-4 rounded-md bg-accent/10">
-                    <div className="font-medium">Aarush Vinay Rao</div>
-                    <div className="text-sm text-muted-foreground">Vice President</div>
-                    <div className="mt-2 flex items-center gap-2 text-sm">
-                      <Mail className="h-4 w-4" />
-                      <span>Add Email or Link</span>
-                    </div>
-                  </div>
-
-                  <div className="p-4 rounded-md bg-accent/10">
-                    <div className="font-medium">Anika Singh</div>
-                    <div className="text-sm text-muted-foreground">Head of Communications</div>
-                    <div className="mt-2 flex items-center gap-2 text-sm">
-                      <Mail className="h-4 w-4" />
-                      <span>Add Email or Link</span>
-                    </div>
-                  </div>
-
-                  <div className="p-4 rounded-md bg-accent/10">
-                    <div className="font-medium">Shyam Challa</div>
-                    <div className="text-sm text-muted-foreground">Editor and Chief Writer</div>
-                    <div className="mt-2 flex items-center gap-2 text-sm">
-                      <Mail className="h-4 w-4" />
-                      <span>Add Email or Link</span>
-                    </div>
-                  </div>
-
-                  <div className="p-4 rounded-md bg-accent/10">
-                    <div className="font-medium">Rudransh Tandon</div>
-                    <div className="text-sm text-muted-foreground">Activities Coordinator</div>
-                    <div className="mt-2 flex items-center gap-2 text-sm">
-                      <Mail className="h-4 w-4" />
-                      <span>Add Email or Link</span>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Contact Directory */}
-            <Card>
-              <CardContent className="p-6">
-                <h2 className="text-2xl font-bold mb-6">Contact Directory</h2>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <Mail className="h-5 w-5 text-primary mt-0.5" />
-                    <div>
-                      <h3 className="font-medium">Email</h3>
-                      <p className="text-muted-foreground">stemhiss@gmail.com</p>
-                      <p className="text-muted-foreground">Second Email</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <Phone className="h-5 w-5 text-primary mt-0.5" />
-                    <div>
-                      <h3 className="font-medium">Phone</h3>
-                      <p className="text-muted-foreground">(123) 456-7890</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <MapPin className="h-5 w-5 text-primary mt-0.5" />
-                    <div>
-                      <h3 className="font-medium">Address</h3>
-                      <p className="text-muted-foreground">
-                        123 STEM Avenue
-                        <br />
-                        Science Building, Suite 456
-                        <br />
-                        Knowledge City, KS 12345
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3">
-                    <ExternalLink className="h-5 w-5 text-primary mt-0.5" />
-                    <div>
-                      <h3 className="font-medium">Social Media</h3>
-                      <div className="space-y-1 mt-1">
-                        <a href="#" className="block text-primary hover:underline">
-                          Twitter
-                        </a>
-                        <a href="#" className="block text-primary hover:underline">
-                          Instagram
-                        </a>
-                        <a href="#" className="block text-primary hover:underline">
-                          YouTube
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Contact Form */}
-          <div className="mt-12">
-            <Card>
-              <CardContent className="p-6">
-                <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
-                <form className="grid gap-4 md:grid-cols-2">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Your Name</Label>
-                    <Input id="name" placeholder="John Doe" />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Your Email</Label>
-                    <Input id="email" type="email" placeholder="john.doe@example.com" />
-                  </div>
-
-                  <div className="space-y-2 md:col-span-2">
-                    <Label htmlFor="subject">Subject</Label>
-                    <Input id="subject" placeholder="How can we help you?" />
-                  </div>
-
-                  <div className="space-y-2 md:col-span-2">
-                    <Label htmlFor="message">Message</Label>
-                    <textarea
-                      id="message"
-                      className="flex min-h-[120px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                      placeholder="Type your message here..."
-                    ></textarea>
-                  </div>
-
-                  <div className="md:col-span-2">
-                    <Button type="submit" className="w-full md:w-auto">
-                      Send Message
-                    </Button>
-                  </div>
-                </form>
-              </CardContent>
-            </Card>
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center space-y-6">
+            <h1 className="font-serif font-bold text-4xl md:text-5xl lg:text-6xl text-balance">
+              Get in Touch
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground text-pretty">
+              Have questions about our coaching services? Want to learn more before booking? We\'re here to help!
+            </p>
           </div>
         </div>
       </section>
-    </div>
+
+      {/* Contact Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Contact Form */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="font-serif text-2xl">Send Us a Message</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="name">Name</Label>
+                    <Input 
+                      id="name" 
+                      name="name" 
+                      placeholder="Your full name" 
+                      required 
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Email</Label>
+                    <Input 
+                      id="email" 
+                      name="email" 
+                      type="email" 
+                      placeholder="your.email@example.com" 
+                      required 
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="age">Age (Optional)</Label>
+                    <Input 
+                      id="age" 
+                      name="age" 
+                      type="number" 
+                      placeholder="Your age" 
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="service">Interested In</Label>
+                    <select 
+                      id="service" 
+                      name="service"
+                      className="w-full h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    >
+                      <option value="">Select a service</option>
+                      <option value="group">Group Sessions</option>
+                      <option value="individual">Individual Coaching</option>
+                      <option value="audio">Audio Recording Analysis</option>
+                      <option value="community">Community Access</option>
+                      <option value="general">General Inquiry</option>
+                    </select>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="message">Message</Label>
+                    <Textarea 
+                      id="message" 
+                      name="message" 
+                      placeholder="Tell us about your goals or ask us any questions..."
+                      rows={5}
+                      required 
+                    />
+                  </div>
+
+                  <Button type="submit" className="w-full" disabled={isSubmitting}>
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+
+            {/* Contact Info */}
+            <div className="space-y-6">
+              <Card>
+                <CardContent className="pt-6 space-y-4">
+                  <div className="flex gap-4">
+                    <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Mail className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold mb-1">Email Us</h3>
+                      <p className="text-muted-foreground">contact@veritasspeaking.com</p>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        We typically respond within 24 hours
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="pt-6 space-y-4">
+                  <div className="flex gap-4">
+                    <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <MapPin className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold mb-1">Location</h3>
+                      <p className="text-muted-foreground">Toronto, Ontario</p>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        All sessions are conducted online
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="pt-6 space-y-4">
+                  <div className="flex gap-4">
+                    <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Clock className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold mb-1">Availability</h3>
+                      <p className="text-muted-foreground">Flexible scheduling</p>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        Weekdays, evenings, and weekends available
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-muted">
+                <CardContent className="pt-6">
+                  <h3 className="font-semibold mb-2">Parent/Guardian Information</h3>
+                  <p className="text-sm text-muted-foreground">
+                    For students under 18, we welcome parents and guardians to reach out with questions or to discuss how our coaching can support your teen\'s development. We\'re happy to arrange a call to discuss your child\'s specific needs and goals.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Quick Links */}
+      <section className="py-16 bg-muted">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center space-y-6">
+            <h2 className="font-serif font-bold text-3xl md:text-4xl text-balance">
+              Before You Reach Out
+            </h2>
+            <p className="text-lg text-muted-foreground text-pretty">
+              Many common questions are answered on our Services page, including pricing, session formats, and what to expect.
+            </p>
+            <Button size="lg" variant="outline" asChild>
+              <a href="/services#faq">View FAQs</a>
+            </Button>
+          </div>
+        </div>
+      </section>
+    </main>
   )
 }
-

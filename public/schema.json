@@ -1,0 +1,43 @@
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Veritas Speaking",
+  "description": "Youth public speaking coaching in Toronto empowering teens and young adults to communicate with confidence",
+  "url": "https://veritasspeaking.com",
+  "logo": "https://veritasspeaking.com/veritas-logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Toronto",
+    "addressRegion": "ON",
+    "addressCountry": "CA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 43.6532,
+    "longitude": -79.3832
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Toronto"
+  },
+  "serviceType": ["Public Speaking Coaching", "Youth Confidence Training", "Communication Skills Development"],
+  "audience": {
+    "@type": "EducationalAudience",
+    "educationalRole": "student",
+    "audienceType": "Teenagers and Young Adults"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "120",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Service",
+    "email": "contact@veritasspeaking.com",
+    "areaServed": "CA",
+    "availableLanguage": "English"
+  }
+}

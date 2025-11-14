@@ -1,165 +1,49 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-@layer base {
+@theme inline {
+  --font-sans: 'Inter', 'Inter Fallback', system-ui, sans-serif;
+  --font-serif: 'Libre Baskerville', 'Libre Baskerville Fallback', serif;
+  
+  --color-background: #faf8f5;
+  --color-foreground: #1a2332;
+  --color-card: #ffffff;
+  --color-card-foreground: #1a2332;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #1a2332;
+  --color-primary: #1a2332;
+  --color-primary-foreground: #faf8f5;
+  --color-secondary: #e8e4dd;
+  --color-secondary-foreground: #1a2332;
+  --color-muted: #f1ede6;
+  --color-muted-foreground: #6b7280;
+  --color-accent: #c17835;
+  --color-accent-foreground: #faf8f5;
+  --color-destructive: #dc2626;
+  --color-destructive-foreground: #ffffff;
+  --color-border: #e8e4dd;
+  --color-input: #e8e4dd;
+  --color-ring: #1a2332;
+  --radius: 0.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
   :root {
-    --background: 120 20% 96%;
-    --foreground: 120 50% 10%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 120 50% 10%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 120 50% 10%;
-
-    --primary: 142 76% 36%;
-    --primary-foreground: 355.7 100% 97.3%;
-
-    --secondary: 120 30% 25%;
-    --secondary-foreground: 0 0% 98%;
-
-    --tertiary: 100 30% 45%;
-    --tertiary-foreground: 0 0% 98%;
-
-    --quaternary: 80 30% 50%;
-    --quaternary-foreground: 120 5.9% 10%;
-
-    --muted: 120 10% 94%;
-    --muted-foreground: 120 20% 40%;
-
-    --accent: 142 76% 87%;
-    --accent-foreground: 120 5.9% 10%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 120 20% 90%;
-    --input: 120 20% 90%;
-    --ring: 120 50% 10%;
-
-    --radius: 1.5rem;
-  }
-
-  .dark {
-    --background: 120 50% 10%;
-    --foreground: 0 0% 98%;
-
-    --card: 120 50% 10%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 120 50% 10%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 142 76% 36%;
-    --primary-foreground: 120 5.9% 10%;
-
-    --secondary: 120 30% 25%;
-    --secondary-foreground: 0 0% 98%;
-
-    --tertiary: 100 30% 45%;
-    --tertiary-foreground: 0 0% 98%;
-
-    --quaternary: 80 30% 50%;
-    --quaternary-foreground: 120 5.9% 10%;
-
-    --muted: 120 30% 15.9%;
-    --muted-foreground: 120 20% 64.9%;
-
-    --accent: 142 76% 47%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 120 30% 15.9%;
-    --input: 120 30% 15.9%;
-    --ring: 120 40% 83.9%;
+    --color-background: #0f1419;
+    --color-foreground: #faf8f5;
+    --color-card: #1a2332;
+    --color-card-foreground: #faf8f5;
+    --color-popover: #1a2332;
+    --color-popover-foreground: #faf8f5;
+    --color-primary: #faf8f5;
+    --color-primary-foreground: #1a2332;
+    --color-secondary: #2d3748;
+    --color-secondary-foreground: #faf8f5;
+    --color-muted: #1e2938;
+    --color-muted-foreground: #9ca3af;
+    --color-accent: #e09656;
+    --color-accent-foreground: #1a2332;
+    --color-border: #2d3748;
+    --color-input: #2d3748;
+    --color-ring: #faf8f5;
   }
 }
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
-
-@layer components {
-  .nav-container {
-    @apply fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b;
-  }
-
-  .nav-content {
-    @apply container mx-auto px-4 flex items-center justify-between h-16;
-  }
-
-  .nav-menu {
-    @apply hidden md:flex items-center space-x-4;
-  }
-
-  .nav-link {
-    @apply px-3 py-2 rounded-full text-foreground hover:bg-accent/50 transition-colors;
-  }
-
-  .nav-link.active {
-    @apply bg-accent font-medium;
-  }
-
-  .mobile-menu {
-    @apply fixed inset-0 bg-white z-50 transition-transform duration-300 ease-in-out;
-  }
-
-  .mobile-menu-content {
-    @apply flex flex-col h-full pt-20 px-6 overflow-y-auto;
-  }
-
-  .mobile-menu-link {
-    @apply px-4 py-3 rounded-full hover:bg-accent/50 transition-colors text-foreground mb-2;
-  }
-
-  .mobile-menu-link.active {
-    @apply bg-accent font-medium;
-  }
-
-  .page-content {
-    @apply pt-16 flex-1 flex flex-col;
-  }
-
-  .gradient-bg {
-    @apply bg-gradient-to-r from-secondary via-tertiary to-primary;
-  }
-
-  .page-heading {
-    @apply font-bold text-5xl md:text-6xl lg:text-7xl font-serif italic text-center py-8;
-  }
-
-  .content-container {
-    @apply container mx-auto px-4 py-6 max-w-5xl;
-  }
-
-  .blog-card {
-    @apply overflow-hidden transition-all duration-300 hover:shadow-xl bg-white rounded-[20px];
-  }
-
-  .blog-card-content {
-    @apply p-6;
-  }
-
-  .blog-card-image {
-    @apply relative w-full h-48 overflow-hidden;
-  }
-
-  .google-doc-embed {
-    @apply w-full rounded-3xl overflow-hidden shadow-lg;
-    min-height: 800px;
-    border: none;
-  }
-
-  .coming-soon-card {
-    @apply relative overflow-hidden bg-white rounded-3xl p-8 text-center shadow-md hover:shadow-xl transition-all;
-  }
-}
-

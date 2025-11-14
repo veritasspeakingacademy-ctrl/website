@@ -1,0 +1,189 @@
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { PRODUCTS } from '@/lib/products'
+import { Check } from 'lucide-react'
+import Link from 'next/link'
+import type { Metadata } from 'next'
+import Image from 'next/image'
+
+export const metadata: Metadata = {
+  title: 'Public Speaking Services & Pricing | Veritas Speaking Toronto',
+  description: 'Explore our youth public speaking coaching services: group sessions, 1-on-1 coaching, audio analysis, and community access. Affordable pricing starting at $29.99. Book online today in Toronto, Ontario.',
+  keywords: 'public speaking coaching prices, youth group sessions Toronto, individual speaking coach, audio speech analysis, teen communication training, online speaking classes Toronto, public speaking services',
+  openGraph: {
+    title: 'Public Speaking Coaching Services - Veritas Speaking',
+    description: 'Group sessions, individual coaching, audio analysis & more. Expert youth public speaking training in Toronto with flexible pricing.',
+    type: 'website',
+  },
+}
+
+export default function Services() {
+  return (
+    <main>
+      {/* Hero */}
+      <section className="py-16 md:py-24 relative">
+        <div className="absolute bottom-10 right-10 opacity-10">
+          <Image src="/veritas-logo.png" alt="" width={100} height={100} />
+        </div>
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center space-y-6">
+            <h1 className="font-serif font-bold text-4xl md:text-5xl lg:text-6xl text-balance">
+              Our Services
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground text-pretty">
+              Choose the coaching option that fits your goals, schedule, and learning style. All services are designed to build your confidence and speaking skills.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {PRODUCTS.map((product) => (
+              <Card 
+                key={product.id} 
+                id={product.id}
+                className={product.popular ? 'border-2 border-primary relative' : ''}
+              >
+                {product.popular && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <span className="bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">
+                      MOST POPULAR
+                    </span>
+                  </div>
+                )}
+                <CardHeader>
+                  <CardTitle className="font-serif text-2xl">
+                    {product.name}
+                  </CardTitle>
+                  <p className="text-muted-foreground">
+                    {product.description}
+                  </p>
+                  <div className="pt-4">
+                    <span className="text-3xl font-bold">
+                      ${(product.priceInCents / 100).toFixed(2)}
+                    </span>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  {product.features && (
+                    <ul className="space-y-2">
+                      {product.features.map((feature, index) => (
+                        <li key={index} className="flex gap-2">
+                          <Check className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+                          <span className="text-sm">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  <Button className="w-full" asChild>
+                    <Link href={`/checkout/${product.id}`}>
+                      Book Now
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-muted" id="faq">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto space-y-8">
+            <h2 className="font-serif font-bold text-3xl md:text-4xl text-center text-balance">
+              Frequently Asked Questions
+            </h2>
+            <div className="space-y-4">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">What age group do you work with?</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    We primarily work with teens and young adults (ages 13-25). Our coaching is specifically designed to address the unique challenges and opportunities of this age group.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Do I need any prior experience?</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Not at all! We work with speakers of all levels, from complete beginners who are nervous about speaking to experienced speakers looking to refine their skills.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">How do group sessions work?</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Group sessions are limited to 6-8 participants to ensure everyone gets personalized attention. Sessions are 90 minutes long and include exercises, practice speeches, and peer feedback in a supportive environment.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">What should I expect from individual coaching?</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Individual coaching sessions are one-on-one and completely personalized to your goals. We'll work on specific skills you want to develop, prepare for important presentations, or address particular challenges you're facing.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">How does audio recording analysis work?</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Simply record your speech (3 or 5 minutes depending on the package) and submit it through our platform. Within 48 hours, you'll receive detailed written feedback covering content, delivery, body language cues (if video), and actionable improvement suggestions.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">What's included in community access?</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Community members get access to our private Discord server, weekly practice sessions, a library of resources, monthly guest speakers, and a supportive network of fellow young speakers.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center space-y-6">
+            <h2 className="font-serif font-bold text-3xl md:text-4xl text-balance">
+              Still Have Questions?
+            </h2>
+            <p className="text-lg text-muted-foreground text-pretty">
+              We're here to help you find the perfect coaching option for your needs.
+            </p>
+            <Button size="lg" asChild>
+              <Link href="/contact">Contact Us</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+    </main>
+  )
+}
