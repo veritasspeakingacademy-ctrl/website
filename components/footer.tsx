@@ -59,18 +59,15 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
           <div>
             <h3 className="font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
-              <li className="text-sm text-muted-foreground">Group Sessions</li>
+              <li className="text-sm text-muted-foreground">Weekly Group Sessions</li>
               <li className="text-sm text-muted-foreground">Individual Coaching</li>
-              <li className="text-sm text-muted-foreground">Audio Analysis</li>
-              <li className="text-sm text-muted-foreground">Community Access</li>
+              <li className="text-sm text-muted-foreground">Audio Recordings</li>
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
             <h3 className="font-semibold mb-4">Connect</h3>
             <div className="space-y-3">
@@ -79,7 +76,7 @@ export default function Footer() {
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Mail className="h-4 w-4" />
-                <span>Contact Us</span>
+                <span>contact@veritasspeaking.com</span>
               </a>
               <div className="flex gap-4 mt-4">
                 <a 

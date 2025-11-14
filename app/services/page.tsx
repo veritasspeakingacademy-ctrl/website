@@ -40,7 +40,7 @@ export default function Services() {
       {/* Services Grid */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
             {PRODUCTS.map((product) => (
               <Card 
                 key={product.id} 
@@ -126,7 +126,7 @@ export default function Services() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    Group sessions are limited to 6-8 participants to ensure everyone gets personalized attention. Sessions are 90 minutes long and include exercises, practice speeches, and peer feedback in a supportive environment.
+                    Group sessions are 30 minutes long and limited to 6-8 participants to ensure everyone gets personalized attention. Sessions include exercises, practice speeches, and peer feedback in a supportive environment.
                   </p>
                 </CardContent>
               </Card>
@@ -137,29 +137,18 @@ export default function Services() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    Individual coaching sessions are one-on-one and completely personalized to your goals. We'll work on specific skills you want to develop, prepare for important presentations, or address particular challenges you're facing.
+                    Individual coaching sessions are 60-minute one-on-one sessions held bi-weekly. They're completely personalized to your goals. We'll work on specific skills you want to develop, prepare for important presentations, or address particular challenges you're facing.
                   </p>
                 </CardContent>
               </Card>
 
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-lg">How does audio recording analysis work?</CardTitle>
+                  <CardTitle className="text-lg">What's included in the Audio Recordings package?</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    Simply record your speech (3 or 5 minutes depending on the package) and submit it through our platform. Within 48 hours, you'll receive detailed written feedback covering content, delivery, body language cues (if video), and actionable improvement suggestions.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">What's included in community access?</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Community members get access to our private Discord server, weekly practice sessions, a library of resources, monthly guest speakers, and a supportive network of fellow young speakers.
+                    You'll receive 12 pre-recorded audio lessons, each 3 minutes long, covering essential public speaking skills. These are perfect for self-paced learning and can be listened to anytime, anywhere.
                   </p>
                 </CardContent>
               </Card>

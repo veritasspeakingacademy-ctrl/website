@@ -9,8 +9,19 @@ import { Mail, MapPin, Clock } from 'lucide-react'
 import { useState } from 'react'
 import { useToast } from '@/hooks/use-toast'
 import Image from 'next/image'
+import Link from 'next/link'
+import type { Metadata } from 'next'
 
-// See app/contact/metadata.ts
+export const metadata: Metadata = {
+  title: 'Contact Us | Veritas Speaking Toronto',
+  description: 'Get in touch with Veritas Speaking for youth public speaking coaching inquiries. Based in Toronto, Ontario. Email us at contact@veritasspeaking.com for questions about our services.',
+  keywords: 'contact Veritas Speaking, Toronto speaking coach, youth coaching inquiries, public speaking questions, teen communication coaching Toronto',
+  openGraph: {
+    title: 'Contact Veritas Speaking - Toronto Youth Speaking Coach',
+    description: 'Reach out for questions about our public speaking coaching services in Toronto. We\'re here to help teens and young adults find their voice.',
+    type: 'website',
+  },
+}
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -137,7 +148,12 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Email Us</h3>
-                      <p className="text-muted-foreground">contact@veritasspeaking.com</p>
+                      <a 
+                        href="mailto:contact@veritasspeaking.com"
+                        className="text-lg text-primary hover:underline"
+                      >
+                        contact@veritasspeaking.com
+                      </a>
                       <p className="text-sm text-muted-foreground mt-1">
                         We typically respond within 24 hours
                       </p>
@@ -204,7 +220,7 @@ export default function Contact() {
               Many common questions are answered on our Services page, including pricing, session formats, and what to expect.
             </p>
             <Button size="lg" variant="outline" asChild>
-              <a href="/services#faq">View FAQs</a>
+              <Link href="/services#faq">View FAQs</Link>
             </Button>
           </div>
         </div>
