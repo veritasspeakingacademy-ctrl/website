@@ -1,11 +1,6 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Textarea } from '@/components/ui/textarea'
-import { Label } from '@/components/ui/label'
 import { Mail, MapPin, Clock } from 'lucide-react'
-import { useState } from 'react'
-import { useToast } from '@/hooks/use-toast'
 import Image from 'next/image'
 import Link from 'next/link'
 import type { Metadata } from 'next'
@@ -22,25 +17,6 @@ export const metadata: Metadata = {
 }
 
 export default function Contact() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const { toast } = useToast()
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000))
-
-    toast({
-      title: 'Message Sent!',
-      description: 'We\'ll get back to you within 24 hours.',
-    })
-
-    setIsSubmitting(false)
-    ;(e.target as HTMLFormElement).reset()
-  }
-
   return (
     <main>
       {/* Hero */}
@@ -54,7 +30,7 @@ export default function Contact() {
               Get in Touch
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground text-pretty">
-              Have questions about our coaching services? Want to learn more before booking? We\'re here to help!
+              Have questions about our coaching services? Want to learn more before booking? We're here to help!
             </p>
           </div>
         </div>
@@ -63,103 +39,29 @@ export default function Contact() {
       {/* Contact Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Contact Form */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="font-serif text-2xl">Send Us a Message</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Name</Label>
-                    <Input 
-                      id="name" 
-                      name="name" 
-                      placeholder="Your full name" 
-                      required 
-                    />
+          <div className="max-w-3xl mx-auto space-y-8">
+            {/* Primary Email Contact */}
+            <Card className="border-2 border-primary/20">
+              <CardContent className="pt-8 pb-8 text-center space-y-4">
+                <div className="flex justify-center mb-4">
+                  <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Mail className="h-8 w-8 text-primary" />
                   </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
-                    <Input 
-                      id="email" 
-                      name="email" 
-                      type="email" 
-                      placeholder="your.email@example.com" 
-                      required 
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="age">Age (Optional)</Label>
-                    <Input 
-                      id="age" 
-                      name="age" 
-                      type="number" 
-                      placeholder="Your age" 
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="service">Interested In</Label>
-                    <select 
-                      id="service" 
-                      name="service"
-                      className="w-full h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                    >
-                      <option value="">Select a service</option>
-                      <option value="group">Group Sessions</option>
-                      <option value="individual">Individual Coaching</option>
-                      <option value="audio">Audio Recording Analysis</option>
-                      <option value="community">Community Access</option>
-                      <option value="general">General Inquiry</option>
-                    </select>
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea 
-                      id="message" 
-                      name="message" 
-                      placeholder="Tell us about your goals or ask us any questions..."
-                      rows={5}
-                      required 
-                    />
-                  </div>
-
-                  <Button type="submit" className="w-full" disabled={isSubmitting}>
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
-                  </Button>
-                </form>
+                </div>
+                <h2 className="font-serif font-bold text-2xl md:text-3xl">Email Us</h2>
+                <a 
+                  href="mailto:contact@veritasspeaking.com"
+                  className="text-2xl md:text-3xl text-primary hover:underline font-semibold block"
+                >
+                  contact@veritasspeaking.com
+                </a>
+                <p className="text-muted-foreground max-w-xl mx-auto text-pretty">
+                  We typically respond within 24 hours. Whether you're a student ready to start your speaking journey or a parent with questions, we'd love to hear from you!
+                </p>
               </CardContent>
             </Card>
 
-            {/* Contact Info */}
-            <div className="space-y-6">
-              <Card>
-                <CardContent className="pt-6 space-y-4">
-                  <div className="flex gap-4">
-                    <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <Mail className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold mb-1">Email Us</h3>
-                      <a 
-                        href="mailto:contact@veritasspeaking.com"
-                        className="text-xl text-primary hover:underline font-medium"
-                      >
-                        contact@veritasspeaking.com
-                      </a>
-                      <p className="text-sm text-muted-foreground mt-2">
-                        We typically respond within 24 hours
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Card>
                 <CardContent className="pt-6 space-y-4">
                   <div className="flex gap-4">
@@ -193,16 +95,16 @@ export default function Contact() {
                   </div>
                 </CardContent>
               </Card>
-
-              <Card className="bg-muted">
-                <CardContent className="pt-6">
-                  <h3 className="font-semibold mb-2">Parent/Guardian Information</h3>
-                  <p className="text-sm text-muted-foreground">
-                    For students under 18, we welcome parents and guardians to reach out with questions or to discuss how our coaching can support your teen\'s development. We\'re happy to arrange a call to discuss your child\'s specific needs and goals.
-                  </p>
-                </CardContent>
-              </Card>
             </div>
+
+            <Card className="bg-muted">
+              <CardContent className="pt-6">
+                <h3 className="font-semibold mb-3 text-lg">Parent/Guardian Information</h3>
+                <p className="text-sm text-muted-foreground text-pretty">
+                  For students under 18, we welcome parents and guardians to reach out with questions or to discuss how our coaching can support your teen's development. We're happy to arrange a call to discuss your child's specific needs and goals.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
@@ -218,7 +120,7 @@ export default function Contact() {
               Many common questions are answered on our Services page, including pricing, session formats, and what to expect.
             </p>
             <Button size="lg" variant="outline" asChild>
-              <Link href="/services#faq">View FAQs</Link>
+              <Link href="/services">View Services & Pricing</Link>
             </Button>
           </div>
         </div>
