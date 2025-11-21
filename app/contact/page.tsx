@@ -1,18 +1,29 @@
-import { Card, CardContent } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { Mail, MapPin, Clock } from 'lucide-react'
-import Image from 'next/image'
-import Link from 'next/link'
-import type { Metadata } from 'next'
+import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Mail, MapPin, Clock } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
+import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: 'Contact Us | Veritas Speaking Toronto',
-  description: 'Get in touch with Veritas Speaking for youth public speaking coaching inquiries. Based in Toronto, Ontario. Email us at contact@veritasspeaking.com for questions about our services.',
-  keywords: 'contact Veritas Speaking, Toronto speaking coach, youth coaching inquiries, public speaking questions, teen communication coaching Toronto',
+  title: "Let's Talk! Contact Adil Mukhi & Maiwand Gawharzad | Veritas Speaking Toronto",
+  description:
+    "Ready to start your speaking journey? Connect with coaches Adil Mukhi and Maiwand Gawharzad! We're excited to answer your questions and help you find the perfect coaching plan. Email us today at contact@veritasspeaking.com!",
+  keywords:
+    "contact Veritas Speaking, reach Adil Mukhi, email Maiwand Gawharzad, Toronto speaking coach contact, youth coaching inquiries, public speaking questions, teen communication coaching Toronto",
   openGraph: {
-    title: 'Contact Veritas Speaking - Toronto Youth Speaking Coach',
-    description: 'Reach out for questions about our public speaking coaching services in Toronto. We\'re here to help teens and young adults find their voice.',
-    type: 'website',
+    title: "Contact Us - Let's Start Your Speaking Journey!",
+    description:
+      "Connect with Toronto coaches Adil Mukhi and Maiwand Gawharzad! We're here to answer questions and help you discover your confident voice.",
+    type: "website",
+    images: [
+      {
+        url: "/confident-teen-speaking-at-podium.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Contact Veritas Speaking coaches",
+      },
+    ],
   },
 }
 
@@ -26,9 +37,7 @@ export default function Contact() {
         </div>
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h1 className="font-serif font-bold text-4xl md:text-5xl lg:text-6xl text-balance">
-              Get in Touch
-            </h1>
+            <h1 className="font-serif font-bold text-4xl md:text-5xl lg:text-6xl text-balance">Get in Touch</h1>
             <p className="text-lg md:text-xl text-muted-foreground text-pretty">
               Have questions about our coaching services? Want to learn more before booking? We're here to help!
             </p>
@@ -49,14 +58,15 @@ export default function Contact() {
                   </div>
                 </div>
                 <h2 className="font-serif font-bold text-2xl md:text-3xl">Email Us</h2>
-                <a 
+                <a
                   href="mailto:contact@veritasspeaking.com"
                   className="text-2xl md:text-3xl text-primary hover:underline font-semibold block"
                 >
                   contact@veritasspeaking.com
                 </a>
                 <p className="text-muted-foreground max-w-xl mx-auto text-pretty">
-                  We typically respond within 24 hours. Whether you're a student ready to start your speaking journey or a parent with questions, we'd love to hear from you!
+                  We typically respond within 24 hours. Whether you're a student ready to start your speaking journey or
+                  a parent with questions, we'd love to hear from you!
                 </p>
               </CardContent>
             </Card>
@@ -71,9 +81,7 @@ export default function Contact() {
                     <div>
                       <h3 className="font-semibold mb-1">Location</h3>
                       <p className="text-muted-foreground">Toronto, Ontario</p>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        All sessions are conducted online
-                      </p>
+                      <p className="text-sm text-muted-foreground mt-1">All sessions are conducted online</p>
                     </div>
                   </div>
                 </CardContent>
@@ -88,9 +96,7 @@ export default function Contact() {
                     <div>
                       <h3 className="font-semibold mb-1">Availability</h3>
                       <p className="text-muted-foreground">Flexible scheduling</p>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        Weekdays, evenings, and weekends available
-                      </p>
+                      <p className="text-sm text-muted-foreground mt-1">Weekdays, evenings, and weekends available</p>
                     </div>
                   </div>
                 </CardContent>
@@ -101,7 +107,9 @@ export default function Contact() {
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-3 text-lg">Parent/Guardian Information</h3>
                 <p className="text-sm text-muted-foreground text-pretty">
-                  For students under 18, we welcome parents and guardians to reach out with questions or to discuss how our coaching can support your teen's development. We're happy to arrange a call to discuss your child's specific needs and goals.
+                  For students under 18, we welcome parents and guardians to reach out with questions or to discuss how
+                  our coaching can support your teen's development. We're happy to arrange a call to discuss your
+                  child's specific needs and goals.
                 </p>
               </CardContent>
             </Card>
@@ -113,11 +121,10 @@ export default function Contact() {
       <section className="py-16 bg-muted">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h2 className="font-serif font-bold text-3xl md:text-4xl text-balance">
-              Before You Reach Out
-            </h2>
+            <h2 className="font-serif font-bold text-3xl md:text-4xl text-balance">Before You Reach Out</h2>
             <p className="text-lg text-muted-foreground text-pretty">
-              Many common questions are answered on our Services page, including pricing, session formats, and what to expect.
+              Many common questions are answered on our Services page, including pricing, session formats, and what to
+              expect.
             </p>
             <Button size="lg" variant="outline" asChild>
               <Link href="/services">View Services & Pricing</Link>

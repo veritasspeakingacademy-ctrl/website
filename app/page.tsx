@@ -1,20 +1,30 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card'
-import { Mic, Users, Target, Award } from 'lucide-react'
-import type { Metadata } from 'next'
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { Mic, Users, Target, Award } from "lucide-react"
+import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: 'Veritas Speaking - Youth Public Speaking Coaching in Toronto | Build Confidence & Communication Skills',
-  description: 'Toronto\'s premier youth public speaking coaching. Empowering teens and young adults to speak with confidence through expert coaching, group sessions, and personalized training. Book your first session today!',
-  keywords: 'youth public speaking Toronto, teen confidence coaching, public speaking classes Toronto, youth communication skills, teen leadership programs, student speech training, public speaking mentorship, confidence workshops Toronto',
+  title: "Veritas Speaking | Toronto Youth Public Speaking Coaching with Adil Mukhi & Maiwand Gawharzad",
+  description:
+    "Transform your speaking skills with Toronto's top youth coaches! Adil Mukhi and Maiwand Gawharzad empower teens to speak confidently. Weekly group sessions $75/month, 1-on-1 coaching $75/hour. Start your journey today!",
+  keywords:
+    "Adil Mukhi public speaking, Maiwand Gawharzad coach, youth public speaking Toronto, teen confidence coaching, public speaking classes Toronto, youth communication skills, teen leadership programs, student speech training Toronto",
   openGraph: {
-    title: 'Veritas Speaking - Youth Public Speaking Coaching in Toronto',
-    description: 'Empowering teens and young adults to speak with confidence. Expert coaching for public speaking, presentations, and communication skills.',
-    type: 'website',
-    locale: 'en_CA',
-    siteName: 'Veritas Speaking',
+    title: "Veritas Speaking - Toronto Youth Public Speaking Coaching",
+    description:
+      "Expert coaches Adil Mukhi and Maiwand Gawharzad help Toronto teens speak with confidence. Group sessions, 1-on-1 coaching, and audio lessons available.",
+    type: "website",
+    locale: "en_CA",
+    siteName: "Veritas Speaking",
+    images: [
+      {
+        url: "/confident-teen-speaking-at-podium.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Confident teen speaking at podium",
+      },
+    ],
   },
 }
 
@@ -27,7 +37,7 @@ export default function Home() {
           <div className="absolute top-20 right-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
           <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
         </div>
-        
+
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <h1 className="font-serif font-bold text-4xl md:text-6xl lg:text-7xl text-balance leading-tight">
@@ -115,9 +125,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 space-y-4">
-              <h2 className="font-serif font-bold text-3xl md:text-4xl text-balance">
-                Our Services
-              </h2>
+              <h2 className="font-serif font-bold text-3xl md:text-4xl text-balance">Our Services</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
                 Flexible coaching options designed to meet you where you are in your speaking journey.
               </p>
@@ -130,7 +138,9 @@ export default function Home() {
                   <p className="text-muted-foreground">
                     Join our 30-minute group calls every week to practice and grow with peers.
                   </p>
-                  <p className="text-2xl font-bold">$75<span className="text-base font-normal text-muted-foreground">/month</span></p>
+                  <p className="text-2xl font-bold">
+                    $75<span className="text-base font-normal text-muted-foreground">/month</span>
+                  </p>
                   <Button className="w-full" asChild>
                     <Link href="/services#group-session">Learn More</Link>
                   </Button>
@@ -146,7 +156,9 @@ export default function Home() {
                   <p className="text-muted-foreground">
                     Bi-weekly 60-minute one-on-one sessions personalized to your goals.
                   </p>
-                  <p className="text-2xl font-bold">$75<span className="text-base font-normal text-muted-foreground">/hour</span></p>
+                  <p className="text-2xl font-bold">
+                    $75<span className="text-base font-normal text-muted-foreground">/hour</span>
+                  </p>
                   <Button className="w-full" asChild>
                     <Link href="/services#individual-coaching">Learn More</Link>
                   </Button>
@@ -190,7 +202,12 @@ export default function Home() {
               <Button size="lg" variant="secondary" asChild>
                 <Link href="/services">Book Your First Session</Link>
               </Button>
-              <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary" asChild>
+              <Button
+                size="lg"
+                variant="outline"
+                className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                asChild
+              >
                 <Link href="/contact">Contact Us</Link>
               </Button>
             </div>

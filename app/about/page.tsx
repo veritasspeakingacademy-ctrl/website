@@ -1,18 +1,28 @@
-import { Card, CardContent } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import Link from 'next/link'
-import { Heart, Lightbulb, Target, Users } from 'lucide-react'
-import type { Metadata } from 'next'
-import Image from 'next/image'
+import { Card, CardContent } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
+import { Heart, Lightbulb, Target, Users } from "lucide-react"
+import type { Metadata } from "next"
+import Image from "next/image"
 
 export const metadata: Metadata = {
-  title: 'About Veritas Speaking | Meet Toronto\'s Youth Public Speaking Coaches',
-  description: 'Learn about Veritas Speaking\'s mission to empower young speakers. Meet our experienced coaches, including TEDx speakers and award-winning mentors dedicated to building youth confidence in Toronto.',
-  keywords: 'about Veritas Speaking, youth coaching Toronto, TEDx youth coaches, public speaking mentors, teen communication experts, youth empowerment Toronto',
+  title: "Meet Your Coaches - Adil Mukhi & Maiwand Gawharzad | Veritas Speaking Toronto",
+  description:
+    "Meet Adil Mukhi and Maiwand Gawharzad, Toronto's passionate youth speaking coaches! Discover their proven approach to building teen confidence and communication skills. Join hundreds of empowered students today!",
+  keywords:
+    "Adil Mukhi coach, Maiwand Gawharzad speaking mentor, about Veritas Speaking, youth coaching Toronto, public speaking mentors, teen communication experts, youth empowerment Toronto",
   openGraph: {
-    title: 'About Veritas Speaking - Youth Public Speaking Coaches',
-    description: 'Meet our team of experienced coaches dedicated to helping Toronto youth find their voice and speak with confidence.',
-    type: 'website',
+    title: "Meet Your Coaches - Adil Mukhi & Maiwand Gawharzad",
+    description: "Toronto's leading youth speaking coaches helping teens find their voice and speak with confidence.",
+    type: "website",
+    images: [
+      {
+        url: "/confident-teen-speaking-at-podium.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Youth public speaking coaching",
+      },
+    ],
   },
 }
 
@@ -30,14 +40,66 @@ export default function About() {
               About Veritas Speaking
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground text-pretty">
-              We believe every young person has a unique voice worth sharing. Our mission is to help you discover that voice and speak with authenticity and confidence.
+              We believe every young person has a unique voice worth sharing. Our mission is to help you discover that
+              voice and speak with authenticity and confidence.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Mission & Values */}
+      {/* Meet the Coaches */}
       <section className="py-16 bg-muted">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto space-y-12">
+            <h2 className="font-serif font-bold text-3xl md:text-4xl text-center mb-12 text-balance">
+              Meet Your Coaches
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <Card>
+                <CardContent className="pt-6 space-y-4">
+                  <div className="aspect-square bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="h-32 w-32 rounded-full bg-primary/20 mx-auto mb-4 flex items-center justify-center">
+                        <span className="text-4xl font-bold text-primary">AM</span>
+                      </div>
+                    </div>
+                  </div>
+                  <h3 className="font-serif font-bold text-2xl text-center">Adil Mukhi</h3>
+                  <p className="text-muted-foreground text-center">Lead Coach & Co-Founder</p>
+                  <p className="text-sm text-muted-foreground">
+                    Adil brings years of experience in youth mentorship and public speaking coaching. His passion for
+                    empowering young voices has helped hundreds of students overcome their fear of public speaking and
+                    discover their authentic communication style.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="pt-6 space-y-4">
+                  <div className="aspect-square bg-gradient-to-br from-accent/10 to-primary/10 rounded-lg flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="h-32 w-32 rounded-full bg-accent/20 mx-auto mb-4 flex items-center justify-center">
+                        <span className="text-4xl font-bold text-accent">MG</span>
+                      </div>
+                    </div>
+                  </div>
+                  <h3 className="font-serif font-bold text-2xl text-center">Maiwand Gawharzad</h3>
+                  <p className="text-muted-foreground text-center">Senior Coach & Co-Founder</p>
+                  <p className="text-sm text-muted-foreground">
+                    Maiwand specializes in building confidence through structured practice and constructive feedback.
+                    His supportive coaching style creates a safe space where students can experiment, grow, and develop
+                    their unique speaking voice.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission & Values */}
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="font-serif font-bold text-3xl md:text-4xl text-center mb-12 text-balance">
@@ -100,21 +162,28 @@ export default function About() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto space-y-6">
-            <h2 className="font-serif font-bold text-3xl md:text-4xl text-balance">
-              Our Story
-            </h2>
+            <h2 className="font-serif font-bold text-3xl md:text-4xl text-balance">Our Story</h2>
             <div className="prose prose-lg max-w-none space-y-4 text-muted-foreground">
               <p>
-                Veritas Speaking was founded with a simple observation: many talented young people struggle to express themselves confidently in public settings. Whether it's presenting in class, interviewing for opportunities, or simply speaking up in group discussions, the fear of public speaking holds them back from reaching their full potential.
+                Veritas Speaking was founded with a simple observation: many talented young people struggle to express
+                themselves confidently in public settings. Whether it's presenting in class, interviewing for
+                opportunities, or simply speaking up in group discussions, the fear of public speaking holds them back
+                from reaching their full potential.
               </p>
               <p>
-                We started in Toronto with a vision to create a safe, supportive environment where teens and young adults could develop their speaking skills without judgment. Our approach combines proven public speaking techniques with modern coaching methods that resonate with today's youth.
+                We started in Toronto with a vision to create a safe, supportive environment where teens and young
+                adults could develop their speaking skills without judgment. Our approach combines proven public
+                speaking techniques with modern coaching methods that resonate with today's youth.
               </p>
               <p>
-                What sets us apart is our understanding that confidence isn't built overnight. It's developed through practice, feedback, and a community that celebrates growth. Every session, whether group or individual, is designed to help you take the next step in your speaking journey.
+                What sets us apart is our understanding that confidence isn't built overnight. It's developed through
+                practice, feedback, and a community that celebrates growth. Every session, whether group or individual,
+                is designed to help you take the next step in your speaking journey.
               </p>
               <p>
-                Today, we're proud to have helped hundreds of young speakers find their voice, overcome their fears, and communicate with confidence. Our students have gone on to excel in academic presentations, job interviews, leadership roles, and personal relationships.
+                Today, we're proud to have helped hundreds of young speakers find their voice, overcome their fears, and
+                communicate with confidence. Our students have gone on to excel in academic presentations, job
+                interviews, leadership roles, and personal relationships.
               </p>
             </div>
           </div>
@@ -133,7 +202,9 @@ export default function About() {
                 <CardContent className="pt-6">
                   <h3 className="font-semibold text-xl mb-3">Personalized Development</h3>
                   <p className="text-muted-foreground">
-                    We recognize that every speaker is unique. Our coaching is tailored to your specific goals, challenges, and learning style. Whether you're preparing for a specific event or building long-term skills, we meet you where you are.
+                    We recognize that every speaker is unique. Our coaching is tailored to your specific goals,
+                    challenges, and learning style. Whether you're preparing for a specific event or building long-term
+                    skills, we meet you where you are.
                   </p>
                 </CardContent>
               </Card>
@@ -142,7 +213,9 @@ export default function About() {
                 <CardContent className="pt-6">
                   <h3 className="font-semibold text-xl mb-3">Practice-Based Learning</h3>
                   <p className="text-muted-foreground">
-                    Theory alone doesn't build confidence—practice does. Our sessions are highly interactive, giving you multiple opportunities to speak, receive feedback, and refine your approach in a supportive environment.
+                    Theory alone doesn't build confidence—practice does. Our sessions are highly interactive, giving you
+                    multiple opportunities to speak, receive feedback, and refine your approach in a supportive
+                    environment.
                   </p>
                 </CardContent>
               </Card>
@@ -151,7 +224,8 @@ export default function About() {
                 <CardContent className="pt-6">
                   <h3 className="font-semibold text-xl mb-3">Constructive Feedback</h3>
                   <p className="text-muted-foreground">
-                    We provide honest, actionable feedback that helps you improve without crushing your confidence. Our coaches are trained to highlight strengths while gently addressing areas for growth.
+                    We provide honest, actionable feedback that helps you improve without crushing your confidence. Our
+                    coaches are trained to highlight strengths while gently addressing areas for growth.
                   </p>
                 </CardContent>
               </Card>
@@ -160,7 +234,8 @@ export default function About() {
                 <CardContent className="pt-6">
                   <h3 className="font-semibold text-xl mb-3">Community Support</h3>
                   <p className="text-muted-foreground">
-                    Learning alongside peers creates accountability and motivation. Our group sessions and community access options provide ongoing support beyond individual coaching.
+                    Learning alongside peers creates accountability and motivation. Our group sessions and community
+                    access options provide ongoing support beyond individual coaching.
                   </p>
                 </CardContent>
               </Card>
@@ -173,9 +248,7 @@ export default function About() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center space-y-6">
-            <h2 className="font-serif font-bold text-3xl md:text-4xl text-balance">
-              Ready to Start Your Journey?
-            </h2>
+            <h2 className="font-serif font-bold text-3xl md:text-4xl text-balance">Ready to Start Your Journey?</h2>
             <p className="text-lg text-muted-foreground text-pretty">
               Join our community of confident young speakers. Let's discover your authentic voice together.
             </p>
