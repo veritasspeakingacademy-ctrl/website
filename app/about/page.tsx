@@ -87,7 +87,7 @@ export default function About() {
                 <CardContent className="pt-6 space-y-4">
                   <div className="aspect-square bg-gradient-to-br from-accent/10 to-primary/10 rounded-lg flex items-center justify-center">
                     <div className="text-center">
-                      {/* Add Maiwand's photo later if you want */}
+                   "C:\Users\maiwa\Downloads\maiwand phtoo.jpg"
                     </div>
                   </div>
 
