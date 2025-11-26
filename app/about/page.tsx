@@ -85,11 +85,12 @@ export default function About() {
                     </div>
                   </div>
                   <h3 className="font-serif font-bold text-2xl text-center">Maiwand Gawharzad</h3>
-                  <p className="text-muted-foreground text-center">Senior Coach & Co-Founder</p>
+                  <p className="text-muted-foreground text-center">Lead Coach & Co-Founder</p>
                   <p className="text-sm text-muted-foreground">
-                    Maiwand specializes in building confidence through structured practice and constructive feedback.
-                    His supportive coaching style creates a safe space where students can experiment, grow, and develop
-                    their unique speaking voice.
+                    Maiwand Gawharzad is devoted to helping people discover the strength and courage in their own voice. 
+                    Through years of public speaking experience, including the TEDx stage, he has learned how powerful it can be when someone finally believes in their ability to speak with clarity and purpose.
+                    His coaching is driven by compassion and a genuine desire to see others rise—guiding students through moments of doubt and helping them uncover the confidence that was always inside them.
+                    With Maiwand, clients don’t just learn to speak; they learn to express themselves with conviction, emotion, and a sense of inner power that transforms every room they walk into.
                   </p>
                 </CardContent>
               </Card>
