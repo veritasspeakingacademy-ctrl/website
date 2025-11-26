@@ -56,15 +56,22 @@ export default function About() {
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              
+              {/* ------------------ ADIL MUKHI ------------------ */}
               <Card>
                 <CardContent className="pt-6 space-y-4">
                   <div className="aspect-square bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg flex items-center justify-center">
                     <div className="text-center">
-                      <div className="h-32 w-32 rounded-full bg-primary/20 mx-auto mb-4 flex items-center justify-center">
-                        <span className="text-4xl font-bold text-primary">AM</span>
-                      </div>
+                      <Image
+                        src="/images/adil.png"
+                        alt="Adil Mukhi"
+                        width={200}
+                        height={200}
+                        className="h-32 w-32 rounded-full object-cover mx-auto mb-4"
+                      />
                     </div>
                   </div>
+
                   <h3 className="font-serif font-bold text-2xl text-center">Adil Mukhi</h3>
                   <p className="text-muted-foreground text-center">Lead Coach & Co-Founder</p>
                   <p className="text-sm text-muted-foreground">
@@ -75,15 +82,15 @@ export default function About() {
                 </CardContent>
               </Card>
 
+              {/* ------------------ MAIWAND GAWHARZAD ------------------ */}
               <Card>
                 <CardContent className="pt-6 space-y-4">
                   <div className="aspect-square bg-gradient-to-br from-accent/10 to-primary/10 rounded-lg flex items-center justify-center">
                     <div className="text-center">
-                      <div className="h-32 w-32 rounded-full bg-accent/20 mx-auto mb-4 flex items-center justify-center">
-                        <span className="text-4xl font-bold text-accent">MG</span>
-                      </div>
+                      {/* Add Maiwand's photo later if you want */}
                     </div>
                   </div>
+
                   <h3 className="font-serif font-bold text-2xl text-center">Maiwand Gawharzad</h3>
                   <p className="text-muted-foreground text-center">Lead Coach & Co-Founder</p>
                   <p className="text-sm text-muted-foreground">
@@ -94,6 +101,7 @@ export default function About() {
                   </p>
                 </CardContent>
               </Card>
+
             </div>
           </div>
         </div>
@@ -154,6 +162,7 @@ export default function About() {
                   </p>
                 </CardContent>
               </Card>
+
             </div>
           </div>
         </div>
@@ -240,6 +249,7 @@ export default function About() {
                   </p>
                 </CardContent>
               </Card>
+
             </div>
           </div>
         </div>
