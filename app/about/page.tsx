@@ -17,7 +17,13 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/confident-teen-speaking-at-podium.jpg",
+        url: "/adilMukhi.png",
+        width: 1200,
+        height: 630,
+        alt: "Youth public speaking coaching",
+      },
+      {
+        url: "/mai.jpg",
         width: 1200,
         height: 630,
         alt: "Youth public speaking coaching",

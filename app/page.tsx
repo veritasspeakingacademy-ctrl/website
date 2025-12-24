@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     siteName: "Veritas Speaking",
     images: [
       {
-        url: "/confident-teen-speaking-at-podium.jpg",
+        url: "/adilmukhi.png",
         width: 1200,
         height: 630,
         alt: "Confident teen speaking at podium",
