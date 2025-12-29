@@ -64,19 +64,15 @@ export default function About() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               
               {/* ------------------ ADIL MUKHI ------------------ */}
-              <Card>
-                <CardContent className="pt-6 space-y-4">
-                  <div className="aspect-square bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg flex items-center justify-center">
-                    <div className="text-center">
-                      <Image
-                        src="/images/adil.png"
-                        alt="Adil Mukhi"
-                        width={200}
-                        height={200}
-                        className="h-32 w-32 rounded-full object-cover mx-auto mb-4"
-                      />
-                    </div>
-                  </div>
+              <div className="aspect-square bg-gradient-to-br from-primary/10 to-accent/10 rounded-lg flex items-center justify-center">
+  <div className="text-center">
+    <span className="text-2xl font-serif font-bold tracking-wide text-muted-foreground uppercase">
+      Coming Soon
+    </span>
+  </div>
+</div>
+
+
 
                   <h3 className="font-serif font-bold text-2xl text-center">Adil Mukhi</h3>
                   <p className="text-muted-foreground text-center">Lead Coach & Co-Founder</p>
@@ -93,7 +89,7 @@ export default function About() {
                 <CardContent className="pt-6 space-y-4">
                   <div className="aspect-square bg-gradient-to-br from-accent/10 to-primary/10 rounded-lg flex items-center justify-center">
                     <div className="text-center">
-                   "C:\Users\maiwa\Downloads\maiwand phtoo.jpg"
+                   "Coming Soon!!!"
                     </div>
                   </div>
 
