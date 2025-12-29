@@ -28,7 +28,7 @@ export const PRODUCTS: Product[] = [
     id: 'individual-coaching',
     name: 'Bi-Weekly Individual Coaching',
     description: '60-minute one-on-one coaching sessions every two weeks',
-    priceInCents: 7500, // $75/hour
+    priceInCents: 11500, // $115/hour
     features: [
       '60-minute private session',
       'Bi-weekly scheduling',
