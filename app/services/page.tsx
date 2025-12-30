@@ -9,13 +9,13 @@ import Image from "next/image"
 export const metadata: Metadata = {
   title: "Public Speaking Services & Pricing | Weekly Sessions $75/month | Veritas Speaking Toronto",
   description:
-    "Choose your perfect coaching plan! Weekly group sessions $75/month, bi-weekly 1-on-1 coaching $75/hour, or 12 audio lessons for $25. Coaches Adil Mukhi and Maiwand Gawharzad guide Toronto teens to speaking success. Book now!",
+    "Choose your perfect coaching plan! Weekly group sessions $75/month, bi-weekly 1-on-1 coaching $115/hour, or 12 audio lessons for $25. Coaches Adil Mukhi and Maiwand Gawharzad guide Toronto teens to speaking success. Book now!",
   keywords:
-    "public speaking coaching prices Toronto, youth group sessions $75, individual speaking coach $75 hour, audio speech lessons $25, teen communication training, online speaking classes Toronto, Adil Mukhi services, Maiwand Gawharzad coaching",
+    "public speaking coaching prices Toronto, youth group sessions $75, individual speaking coach $115 hour, audio speech lessons $25, teen communication training, online speaking classes Toronto, Adil Mukhi services, Maiwand Gawharzad coaching",
   openGraph: {
     title: "Public Speaking Services & Pricing - Veritas Speaking",
     description:
-      "Affordable youth coaching in Toronto. Group sessions $75/month, 1-on-1 coaching $75/hour, audio lessons $25. Expert guidance from Adil Mukhi and Maiwand Gawharzad.",
+      "Affordable youth coaching in Toronto. Group sessions $75/month, 1-on-1 coaching $115/hour, audio lessons $25. Expert guidance from Adil Mukhi and Maiwand Gawharzad.",
     type: "website",
     images: [
       {
