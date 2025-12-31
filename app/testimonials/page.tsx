@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: "/confident-teen-speaking-at-podium.jpg",
         width: 1200,
         height: 630,
-        alt: "Confident student speaking success",
+        alt: "Confident student speaking succes s",
       },
     ],
   },
