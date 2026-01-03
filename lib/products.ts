@@ -35,6 +35,7 @@ export const PRODUCTS: Product[] = [
       'Personalized feedback and strategy',
       'Custom speech analysis',
       'Follow-up resources included'
+      'Monthly commitment'
     ]
   },
   {
