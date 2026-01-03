@@ -8,7 +8,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Let's Talk! Contact Adil Mukhi & Maiwand Gawharzad | Veritas Speaking Toronto",
   description:
-    "Ready to start your speaking journey? Connect with coaches Adil Mukhi and Maiwand Gawharzad! We're excited to answer your questions and help you find the perfect coaching plan. Email us today at contact@veritasspeaking.com!",
+    "Ready to start your speaking journey? Connect with coaches Adil Mukhi and Maiwand Gawharzad! We're excited to answer your questions and help you find the perfect coaching plan. Email us today at veritasspeakingacademy@gmail.com!",
   keywords:
     "contact Veritas Speaking, reach Adil Mukhi, email Maiwand Gawharzad, Toronto speaking coach contact, youth coaching inquiries, public speaking questions, teen communication coaching Toronto",
   openGraph: {
@@ -59,10 +59,10 @@ export default function Contact() {
                 </div>
                 <h2 className="font-serif font-bold text-2xl md:text-3xl">Email Us</h2>
                 <a
-                  href="mailto:contact@veritasspeaking.com"
+                  href="mailto:veritasspeakingacademy@gmail.com"
                   className="text-2xl md:text-3xl text-primary hover:underline font-semibold block"
                 >
-                  contact@veritasspeaking.com
+                  veritasspeakingacademy@gmail.com
                 </a>
                 <p className="text-muted-foreground max-w-xl mx-auto text-pretty">
                   We typically respond within 24 hours. Whether you're a student ready to start your speaking journey or

@@ -150,7 +150,7 @@ export default function RootLayout({
                   "contactPoint": {
                     "@type": "ContactPoint",
                     "contactType": "Customer Service",
-                    "email": "contact@veritasspeaking.com",
+                    "email": "veritasspeakingacademy@gmail.com",
                     "areaServed": "CA",
                     "availableLanguage": "English"
                   }
