@@ -3,6 +3,7 @@ export interface Product {
   name: string
   description: string
   priceInCents: number
+  priceSuffix?: string
   images?: string[]
   features?: string[]
   popular?: boolean
