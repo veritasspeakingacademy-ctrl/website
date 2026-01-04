@@ -15,6 +15,7 @@ export const PRODUCTS: Product[] = [
     name: 'Weekly Group Sessions',
     description: '30-minute weekly group calls for collaborative learning',
     priceInCents: 7500, // $75/month
+    priceSuffix: '/month',
     popular: true,
     features: [
       '30-minute weekly sessions',
@@ -29,6 +30,7 @@ export const PRODUCTS: Product[] = [
     name: 'Bi-Weekly Individual Coaching',
     description: '60-minute one-on-one coaching sessions every two weeks',
     priceInCents: 11500, // $115/hour
+    priceSuffix: '/month',
     features: [
       '60-minute private session',
       'Bi-weekly scheduling',
