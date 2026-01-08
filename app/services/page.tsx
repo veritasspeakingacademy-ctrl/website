@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Public Speaking Services & Pricing - Veritas Speaking",
     description:
-      "Affordable youth coaching in Toronto. Group sessions $75/month, 1-on-1 coaching $115/hour, audio lessons $25. Expert guidance from Adil Mukhi and Maiwand Gawharzad.",
+      "Affordable youth coaching in Toronto. Group sessions $75/month, 1-on-1 coaching $115, audio lessons $25. Expert guidance from Adil Mukhi and Maiwand Gawharzad.",
     type: "website",
     images: [
       {
