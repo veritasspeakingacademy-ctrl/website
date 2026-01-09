@@ -7,7 +7,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Veritas Speaking | Toronto Youth Public Speaking Coaching with Adil Mukhi & Maiwand Gawharzad",
   description:
-    "Transform your speaking skills with Toronto's top youth coaches! Adil Mukhi and Maiwand Gawharzad empower teens to speak confidently. Weekly group sessions $75/month, 1-on-1 coaching $115/hour. Start your journey today!",
+    "Transform your speaking skills with Toronto's top youth coaches! Adil Mukhi and Maiwand Gawharzad empower teens to speak confidently. Weekly group sessions $75/month, 1-on-1 coaching $115. Start your journey today!",
   keywords:
     "Adil Mukhi public speaking, Maiwand Gawharzad coach, youth public speaking Toronto, teen confidence coaching, public speaking classes Toronto, youth communication skills, teen leadership programs, student speech training Toronto",
   openGraph: {
@@ -157,7 +157,7 @@ export default function Home() {
                     Bi-weekly 60-minute one-on-one sessions personalized to your goals.
                   </p>
                   <p className="text-2xl font-bold">
-                    $115<span className="text-base font-normal text-muted-foreground">/hour</span>
+                    $115
                   </p>
                   <Button className="w-full" asChild>
                     <Link href="/services#individual-coaching">Learn More</Link>
