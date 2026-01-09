@@ -157,7 +157,7 @@ export default function Home() {
                     Bi-weekly 60-minute one-on-one sessions personalized to your goals.
                   </p>
                   <p className="text-2xl font-bold">
-                    $115
+                    $115<span className="text-base font-normal text-muted-foreground">/month</span>
                   </p>
                   <Button className="w-full" asChild>
                     <Link href="/services#individual-coaching">Learn More</Link>
